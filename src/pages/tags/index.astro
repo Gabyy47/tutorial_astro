@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/baselayout.astro';
+const tags = ['astro', 'bloguear', 'aprender en público', 'éxitos', 'contratiempos', 'comunidad']
 const pageTitle = "Índice de etiquetas";
 ---
-<BaseLayout pageTitle={pageTitle}></BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    {tags.map((tag) => <li>{tag}</li>)}
+  </ul>
+</BaseLayout>
