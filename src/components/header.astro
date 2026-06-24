@@ -1,0 +1,18 @@
+---
+import Menu from './menu.astro'; 
+import Navigation from './navigation.astro';
+const referencias = {
+  Autor: "Sarah",
+  Fecha: "24-06-2026",
+};
+---
+<header>
+
+    <li>Autora: {referencias.Autor}.</li>
+  <li>Creado: {referencias.Fecha}.</li>
+
+  <nav>
+    <Menu />
+    <Navigation />
+  </nav>
+</header>
