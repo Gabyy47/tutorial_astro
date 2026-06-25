@@ -1,18 +1,96 @@
 ---
-import Menu from './menu.astro'; 
-import Navigation from './navigation.astro';
-const referencias = {
-  Autor: "Sarah",
-  Fecha: "24-06-2026",
-};
+
 ---
-<header>
 
-    <li>Autora: {referencias.Autor}.</li>
-  <li>Creado: {referencias.Fecha}.</li>
+<header class="custom-header">
+  <div class="hero-banner">
+    <div class="banner-container">
+      
+      <div class="banner-text">
+        Piensa en <span class="text-yellow">Tecnología</span>, piensa en: <span class="text-bold-white">.hn</span>
+      </div>
+      
+      <div class="banner-avatar">
+        <img src="/avatar.png" alt="Avatar Ilustración" class="avatar-img" fallback-src="https://via.placeholder.com/150" />
+      </div>
 
-  <nav>
-    <Menu />
-    <Navigation />
-  </nav>
+    </div>
+  </div>
 </header>
+
+<style>
+  /* CONFIGURACIÓN GENERAL */
+  .custom-header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+  }
+
+  /* ESTILOS DEL BANNER */
+  .hero-banner {
+    background: linear-gradient(135deg, #2b6cb0 0%, #319795 50%, #4fd1c5 100%);
+    padding: 40px 20px;
+    overflow: hidden;
+  }
+
+  .banner-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .banner-text {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 60%;
+    line-height: 1.4;
+  }
+
+  .text-yellow {
+    color: #ecc94b; 
+    font-weight: 700;
+  }
+
+  .text-bold-white {
+    font-weight: 800;
+    font-size: 2.2rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  .banner-avatar {
+    position: relative;
+    right: 0;
+  }
+
+  .avatar-img {
+    height: 140px;
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2)); 
+  }
+
+  /* RESPONSIVE: Ajustes para celulares */
+  @media (max-width: 640px) {
+    .banner-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    .banner-text {
+      max-width: 100%;
+      font-size: 1.2rem;
+    }
+    .text-bold-white {
+      font-size: 1.8rem;
+      display: block;
+      margin-top: 5px;
+    }
+    .avatar-img {
+      height: 100px;
+    }
+  }
+</style>

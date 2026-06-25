@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/baselayout.astro';
-const pageTitle = "Página de inicio";
+import Navigation from '../components/navigation.astro';
+const pageTitle = "Inicio";
 ---
 <BaseLayout pageTitle={pageTitle}>
+<Navigation />
   <h2>Mi impresionante subtítulo del blog</h2>
 </BaseLayout>
