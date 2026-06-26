@@ -16,21 +16,23 @@
 </nav>
 
 <style>
+ 
   .nav-container {
     display: flex;
-    gap: 30px;
-     font-family: sans-serif;
-         align-items: center;
+    align-items: center;
+    gap: 30px; 
+    background-color: transparent; 
+    padding: 10px 0;
   }
 
-  .nav-container a, .dropdown-trigger {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 700; 
+  .nav-item,
+  .nav-container a,
+  .dropdown {
+    text-decoration: none !important;
+    color: #000000 !important;
+    font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    padding: 10px20px;
-    transitions: color 0.2s ease;
   }
 
   .dropdown {
@@ -38,45 +40,36 @@
     display: inline-block;
   }
 
+  
   .dropdown-menu {
-    display: none;
-    position: absolute;
-    backgrund-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    min-width: 150px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0,1); 
-    border-radius: 6px;
-    padding: 6px 0;
-    z-index: 100;
-    top: 100%;
+    position: absolute; 
+    top: 95%;          
     left: 0;
+    background-color: #ffffff; 
+    min-width: 180px;
+    border-radius: 8px;
+    padding: 8px 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); 
+    display: none; 
+    z-index: 9999 !important; 
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
   }
 
   .dropdown-menu a {
-display: block;
-padding: 8px 16px;
-color: #333;
-font-size: 14px;
+    display: block;
+    padding: 10px 20px;
+    color: #2d3748 !important; 
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
- .dropdown-menu a:hover {
-  background-color: #f3f4f6;
-  color: #333;
- } 
-
- .dropdown:hover .dropdown-menu {
-  display: block;
- }
-
- a {
-  text-decoration: none;
-  color: #000000;
-  font-weight: 700;
-  font-size: 16px;
-  transition: color 0.2s ease;
- }
-
- a:hover {
-  color: #4a5568;
- }
+  .dropdown-menu a:hover {
+    background-color: #edf2f7; 
+    color: #000000 !important;
+  }
 </style>
