@@ -1,9 +1,194 @@
 ---
-import Social from './social.astro';
 ---
 
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-logo-section">
+      <div class="logo-placeholder">
+        <span class="logo-main">.hn</span>
+        <span class="logo-sub">Innovando juntos</span>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Navegar</h3>
+      <ul>
+        <li><a href="/internet-tecnologia">Internet Y Tecnología</a></li>
+        <li><a href="/emprendimiento">Emprendimiento y Negocio en Línea</a></li>
+        <li><a href="/comercial">Comercial</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Portales</h3>
+      <ul>
+        <li><a href="https://punto.hn" target="_blank" rel="noopener noreferrer">Punto.hn</a></li>
+        <li><a href="/rds">RDS</a></li>
+        <li><a href="/empleos">Empleos</a></li>
+        <li><a href="/becas">Becas</a></li>
+        <li><a href="/eventos">Eventos</a></li>
+        <li><a href="/rds-radio">RDS Radio</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Síguenos</h3>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Powered by <a href="https://punto.hn" target="_blank">Punto.hn</a></p>
+  </div>
 </footer>
+
+<style>
+  /* CONFIGURACIÓN GENERAL DEL FOOTER */
+  .main-footer {
+    background-color: #f4f5f7; /* Gris muy claro idéntico a tu diseño */
+    padding: 60px 20px 30px 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #4a5568;
+  }
+
+  /* CONTENEDOR FLEX DE LAS COLUMNAS */
+  .footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye las columnas equitativamente */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+
+  /* DISEÑO DEL LOGO (.hn) */
+  .footer-logo-section {
+    flex: 1;
+  }
+  
+  .logo-placeholder {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-main {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #1a202c;
+    line-height: 1;
+  }
+
+  .logo-sub {
+    font-size: 0.85rem;
+    color: #718096;
+    font-weight: 600;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ESTILOS DE LAS COLUMNAS DE TEXTO */
+  .footer-column {
+    flex: 1;
+  }
+
+  .footer-column h3 {
+    color: #1a202c;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column li {
+    margin-bottom: 12px;
+  }
+
+  .footer-column a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  /* Efecto hover sutil para los enlaces del footer */
+  .footer-column a:hover {
+    color: #000000;
+  }
+
+  /* CONTENEDOR DE REDES SOCIALES */
+  .social-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .social-links a {
+    color: #1a202c;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    color: #4a5568;
+    transform: scale(1.1); /* Efecto hover dinámico para los íconos */
+  }
+
+  /* DIVISOR Y COPYRIGHT */
+  .footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #718096;
+  }
+
+  .footer-bottom a {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* RESPONSIVE: Se adapta perfectamente a celulares */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column; /* Cambia a fila única en móvil */
+      gap: 40px;
+      text-align: left;
+    }
+    
+    .footer-logo-section, .footer-column {
+      flex: none;
+      width: 100%;
+    }
+  }
+</style>
