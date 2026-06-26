@@ -1,6 +1,7 @@
 ---
 const { pageTitle } = Astro.props;
 import "../styles/global.css";
+import Carrusel from "../components/carrusel.astro";
 import Header from "../components/header.astro";
 import Footer from '../components/footer.astro';
 
@@ -17,6 +18,7 @@ import Footer from '../components/footer.astro';
 	<body>
 		<Header />
         <slot />
+		<Carrusel />
 		    <Footer />
 			<script>
     import "../scripts/menu.js";
