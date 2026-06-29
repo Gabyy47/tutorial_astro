@@ -1,16 +1,23 @@
 @import "tailwindcss";
 
-
+/* ==========================================================================
+   Estilos Base del Sitio (CSS Estándar Válido)
+   ========================================================================== */
 html {
   background-color: #f1f5f9;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Modo Oscuro Global */
+html.dark {
+  background-color: #0d0950;
+  color: #ffffff;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
   line-height: 1.5;
 }
 
@@ -21,22 +28,33 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
 
-  /* estilos de la barra de navegación*/
+/* Enlaces globales en modo oscuro */
+.dark a {
+  color: #ff9776;
+}
 
-  .menu {
+/* ==========================================================================
+   Barra de Navegación (Corregida para evitar amontonamientos)
+   ========================================================================== */
+.menu {
+  display: none; /* Se oculta por defecto en PC, lo manejas en móvil */
   background-color: #0d0950;
   border: none;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .nav-links {
   width: 100%;
   display: none;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-links a {
@@ -48,6 +66,7 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   color: #0d0950;
+  transition: background-color 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -55,15 +74,24 @@ h1 {
   background-color: #ff9776;
 }
 
+/* Muestra los enlaces si el menú móvil está activo */
 :has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
+  display: block;
 }
 
-
+/* ==========================================================================
+   Vista de Escritorio / Pantallas Grandes (>= 636px)
+   ========================================================================== */
 @media screen and (min-width: 636px) {
+  .menu {
+    display: none !important;
+  }
+
   .nav-links {
-    margin-left: 5em;
-    display: block;
+    margin-left: 5rem;
+    display: flex !important; /* Cambiado a flex para separar los enlaces perfectamente */
+    flex-direction: row;
+    gap: 24px; /* Espaciado automático entre pestañas */
     position: static;
     width: auto;
     background: none;
@@ -71,33 +99,22 @@ h1 {
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 10px 15px;
   }
-}}
-
-.menu {
-    display: none;
-  }
-
-  html.dark {
-  background-color: #0d0950;
-  color: #fff;
 }
 
+/* Variantes de la Navegación en Modo Oscuro */
 .dark .menu {
-  background-color: #fff;
-  color: #000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark .nav-links a {
+  color: #ffffff;
 }
 
 .dark .nav-links a:hover,
 .dark .nav-links a:focus {
   color: #0d0950;
-}
-
-.dark .nav-links a {
-  color: #fff;
-}
-
-.dark a {
-  color: #ff9776;
+  background-color: #ff9776;
 }

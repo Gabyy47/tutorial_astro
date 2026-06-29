@@ -1,117 +1,28 @@
 ---
-
+// src/components/header.astro
+import { headerImageData } from './headerData';
 ---
 
-<header class="header-full-width">
-  <div class="hero-banner">
-    <div class="banner-content">
+<header class="w-full m-0 p-0 overflow-x-hidden font-sans">
+  <div class="w-full bg-linear-to-br from-[#2b6cb0] to-[#319795] py-10 md:py-15 flex justify-center">
+    
+    <div class="w-[90%] max-w-300 mx-auto flex flex-col md:flex-row justify-between items-center gap-7.5 md:gap-5">
       
-      <div class="banner-text">
-        Piensa en <span class="text-yellow">Tecnología</span>, piensa en: <span class="text-bold-white">.hn</span>
+      <div class="text-white text-[1.6rem] xl:text-[1.8rem] font-normal w-full md:max-w-[60%] leading-[1.4] text-center md:text-left">
+        Piensa en <span class="text-[#ecc94b] font-bold">Tecnología</span>, piensa en: 
+        <span class="block mt-2.5 font-extrabold text-[2.2rem] md:inline-block md:align-middle md:ml-2.5 md:mt-0 xl:text-[2.4rem]">
+          .hn
+        </span>
       </div>
       
-      <div class="banner-avatar">
+      <div class="shrink-0">
         <img 
-        src="Avatar.png" 
-        alt="Avatar Ilustración" 
-        class="avatar-img"
-      />
+          src={headerImageData.src} 
+          alt={headerImageData.alt} 
+          class="h-32.5 md:h-37.5 xl:h-45 object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.2)]"
+        />
       </div>
+
     </div>
   </div>
 </header>
-
-<style>
-  .header-full-width {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  .hero-banner {
-    background: linear-gradient(135deg, #2b6cb0 0%, #319795 100%);
-    width: 100%;
-    padding: 60px 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .banner-content {
-    width: 90%;
-    max-width: 1200;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .banner-text {
-    color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 400;
-    max-width: 60%;
-    line-height: 1.4;
-  }
-
-  .text-yellow {
-    color: #ecc94b; 
-    font-weight: 700;
-  }
-
-  .text-bold-white {
-    font-weight: 800;
-    font-size: 2.2rem;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-  }
-
-  .banner-avatar {
-    flex-shrink: 0;
-  }
-
-  .avatar-img {
-    height: 180px;
-    object-fit: contain;
-    filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.2)); 
-  }
-
-  @media (max-width: 2000px) {
-    .banner-text {
-      font-size: 1.6rem;
-    }
-    .text-bold-white {
-      font-size: 2.4rem;
-    }
-    .avatar-img {
-      height: 150px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-banner {
-      padding: 40px 0;
-    }
-    .banner-content {
-      flex-direction: row;
-      text align: center;
-      gap: 30px;
-    }
-    .banner-text {
-      max-width: 100;
-      text-align: center;
-    }
-    .text-bold-white {
-      font-size: 2.2rem;
-      display: block;
-      margin: 10px 0 0 0;
-    }
-    .avatar-img {
-      height: 130px;
-    }
-  }
-</style>
